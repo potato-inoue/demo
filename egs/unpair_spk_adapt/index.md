@@ -42,7 +42,7 @@ DMOS results of speaker similarity
 
 ### FemaleB  
 
-    Marie clasped her hands and started up from her seat.
+    I must have you to think of through the months and months of loneliness.
 
 | Model | Speech |  
 | --- | --- |  
@@ -54,6 +54,17 @@ DMOS results of speaker similarity
 | AD-EM | <audio src="wav/adapt-em/4446_2275_000046_000001.wav" controls></audio> |  
 
 ### FemaleC  
+
+    She seized it; she clung to it.
+
+| Model | Speech |  
+| --- | --- |  
+| Target speaker (reference) | <audio src="wav/ground-truth/5683_32879_000050_000002.wav" controls></audio> |  
+| PT | <audio src="wav/pretrained/5683_32879_000050_000002.wav" controls></audio> |  
+| PROPOSED | <audio src="wav/adapt-ft-unpair/5683_32879_000050_000002.wav" controls></audio> |  
+| AD-FT-P | <audio src="wav/adapt-ft-pair/5683_32879_000050_000002.wav" controls></audio> |  
+| AD-FT-p | <audio src="wav/adapt-ft-pair-half/5683_32879_000050_000002.wav" controls></audio> |  
+| AD-EM | <audio src="wav/adapt-em/5683_32879_000050_000002.wav" controls></audio> |  
 
 ## Reference
 
