@@ -68,5 +68,5 @@ DMOS results of speaker similarity
 
 ## Reference
 
-- [1]: A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, Ł. Kaiser, and I. Polosukhin, “Attention is allyou need,”  in Advances in neural information processing sys-tems, 2017, pp. 5998–6008.
-- [2]: D. Snyder, D. Garcia-Romero, G. Sell, D. Povey, and S. Khu-danpur, “X-vectors: Robust DNN embeddings for speaker recognition,” in Proc. of ICASSP, 2018, pp. 5329–5333.
+- [1] A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, Ł. Kaiser, and I. Polosukhin, “Attention is allyou need,”  in Advances in neural information processing sys-tems, 2017, pp. 5998–6008.
+- [2] D. Snyder, D. Garcia-Romero, G. Sell, D. Povey, and S. Khu-danpur, “X-vectors: Robust DNN embeddings for speaker recognition,” in Proc. of ICASSP, 2018, pp. 5329–5333.
