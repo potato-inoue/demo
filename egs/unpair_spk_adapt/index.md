@@ -22,10 +22,13 @@ All TTS models have Transformer [1] architecture.
 - AD-FT-p : the adapted model based on fine-tuning with half size of paired data (speech, texts)
 - AD-EM : the adapted model based on feature embedding (x-vector [2])
 
-## Sample
+## Subjective evalutation results
 
-DMOS results of speaker similarity  
+### DMOS results of speaker similarity  
+
 <img src="img/DMOS_spk_similar.png" width="320px"> 
+
+## Sample
 
 ### FemaleA  
 
