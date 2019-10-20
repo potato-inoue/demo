@@ -24,11 +24,16 @@ All TTS models have Transformer [1] architecture.
 
 ## Sample
 
+DMOS results of speaker similarity  
+<img src="img/DMOS_spk_similar.png" width="320px"> 
+
+### FemaleA  
+
 | Model | Speech |  
 | --- | --- |  
-| Target speaker (ground-truth) |  |  
-| PT |  |  
-| PROPOSED |  | 
-| AD-FT-P |  | 
-| AD-FT-p |  | 
-| AD-EM |  |  
+| Target speaker (ground-truth) | <audio src="wav/ground-truth/237_134500_000036_000000.wav" controls></audio> |  
+| PT | <audio src="wav/pretrained/237_134500_000036_000000.wav" controls></audio> |  
+| PROPOSED | <audio src="wav/adapt-ft-unpair/237_134500_000036_000000.wav" controls></audio> |  
+| AD-FT-P | <audio src="wav/adapt-ft-pair/237_134500_000036_000000.wav" controls></audio> |  
+| AD-FT-p | <audio src="wav/adapt-ft-pair-half/237_134500_000036_000000.wav" controls></audio> |  
+| AD-EM | <audio src="wav/adapt-ft-em/237_134500_000036_000000.wav" controls></audio> |  
