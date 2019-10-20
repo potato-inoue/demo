@@ -20,7 +20,7 @@ All TTS models have Transformer [1] architecture.
 - **PROPOSED : the adapted model based on fine-tuning with unpaired speech data**
 - AD-FT-P : the adapted model based on fine-tuning with paired data (speech, texts)
 - AD-FT-p : the adapted model based on fine-tuning with half size of paired data (speech, texts)
-- AD-EM : the adapted model based on feature embedding (x-vector)
+- AD-EM : the adapted model based on feature embedding (x-vector [2])
 
 ## Sample
 
@@ -29,11 +29,33 @@ DMOS results of speaker similarity
 
 ### FemaleA  
 
+    Marie clasped her hands and started up from her seat.
+
 | Model | Speech |  
 | --- | --- |  
-| Target speaker (ground-truth) | <audio src="wav/ground-truth/237_134500_000036_000000.wav" controls></audio> |  
+| Target speaker (reference) | <audio src="wav/ground-truth/237_134500_000036_000000.wav" controls></audio> |  
 | PT | <audio src="wav/pretrained/237_134500_000036_000000.wav" controls></audio> |  
 | PROPOSED | <audio src="wav/adapt-ft-unpair/237_134500_000036_000000.wav" controls></audio> |  
 | AD-FT-P | <audio src="wav/adapt-ft-pair/237_134500_000036_000000.wav" controls></audio> |  
 | AD-FT-p | <audio src="wav/adapt-ft-pair-half/237_134500_000036_000000.wav" controls></audio> |  
-| AD-EM | <audio src="wav/adapt-ft-em/237_134500_000036_000000.wav" controls></audio> |  
+| AD-EM | <audio src="wav/adapt-em/237_134500_000036_000000.wav" controls></audio> |  
+
+### FemaleB  
+
+    Marie clasped her hands and started up from her seat.
+
+| Model | Speech |  
+| --- | --- |  
+| Target speaker (reference) | <audio src="wav/ground-truth/4446_2275_000046_000001.wav" controls></audio> |  
+| PT | <audio src="wav/pretrained/4446_2275_000046_000001.wav" controls></audio> |  
+| PROPOSED | <audio src="wav/adapt-ft-unpair/4446_2275_000046_000001.wav" controls></audio> |  
+| AD-FT-P | <audio src="wav/adapt-ft-pair/4446_2275_000046_000001.wav" controls></audio> |  
+| AD-FT-p | <audio src="wav/adapt-ft-pair-half/4446_2275_000046_000001.wav" controls></audio> |  
+| AD-EM | <audio src="wav/adapt-em/4446_2275_000046_000001.wav" controls></audio> |  
+
+### FemaleC  
+
+## Reference
+
+- [1]: A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, Ł. Kaiser, and I. Polosukhin, “Attention is allyou need,”  in Advances in neural information processing sys-tems, 2017, pp. 5998–6008.
+- [2]: D. Snyder, D. Garcia-Romero, G. Sell, D. Povey, and S. Khu-danpur, “X-vectors: Robust DNN embeddings for speaker recognition,” in Proc. of ICASSP, 2018, pp. 5329–5333.
