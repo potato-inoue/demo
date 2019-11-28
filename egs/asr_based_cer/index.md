@@ -285,7 +285,7 @@
     HYP:  b e t w e e n s e c r e t a r y d i l l o n a n d d o n a l d f * o r n i g s p e c i a l a s s i s t a n t t o t h e p r e s i d e n t f o r s c i e n c e a n d t e c h n o l o g y i s a u s e f u l e f f o r t i n t h e r i g h t d i r e c t i o n 
     Eval:                                                                 D                                                                                                                                                                                         
 
-## 単語の未発話のサンプル2 (Griffin-Lim)
+## 単語の未発話のサンプル3 (Griffin-Lim)
 
 | Model | Waveform synthesis | Speech |  
 | --- | --- | --- |  
