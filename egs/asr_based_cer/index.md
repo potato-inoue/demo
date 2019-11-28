@@ -145,8 +145,8 @@
 | Model | Waveform synthesis | Speech |  
 | --- | --- | --- |  
 | Ground truth |  | <audio src="wav/ground-truth/LJ050-0132.wav" controls></audio> |  
-| Transformer.v1 | WaveNet vocoder | <audio src="wav/transformer.v1.WNVmol/LJ050-0132.wav" controls></audio> |  
-| Tacotron2.v2 | WaveNet vocoder | <audio src="wav/taco2.v2.WNVmol/LJ050-0132.wav" controls></audio> |  
+| Transformer.v1 | WaveNet vocoder | <audio src="wav/transformer.v1.WNVmol/LJ050-0132_gen.wav" controls></audio> |  
+| Tacotron2.v2 | WaveNet vocoder | <audio src="wav/taco2.v2.WNVmol/LJ050-0132_gen.wav" controls></audio> |  
 
     Ground truth
     id: (lj050_0132)
@@ -203,8 +203,8 @@
 | Model | Waveform synthesis | Speech |  
 | --- | --- | --- |  
 | Ground truth |  | <audio src="wav/ground-truth/LJ050-0176.wav" controls></audio> |  
-| Transformer.v1 | WaveNet vocoder | <audio src="wav/transformer.v1.WNVmol/LJ050-0176.wav" controls></audio> |  
-| Tacotron2.v2 | WaveNet vocoder | <audio src="wav/taco2.v2.WNVmol/LJ050-0176.wav" controls></audio> |  
+| Transformer.v1 | WaveNet vocoder | <audio src="wav/transformer.v1.WNVmol/LJ050-0176_gen.wav" controls></audio> |  
+| Tacotron2.v2 | WaveNet vocoder | <audio src="wav/taco2.v2.WNVmol/LJ050-0176_gen.wav" controls></audio> |  
 
     Ground truth
     id: (lj050_0176)
@@ -261,8 +261,8 @@
 | Model | Waveform synthesis | Speech |  
 | --- | --- | --- |  
 | Ground truth |  | <audio src="wav/ground-truth/LJ050-0267.wav" controls></audio> |  
-| Transformer.v1 | WaveNet vocoder | <audio src="wav/transformer.v1.WNVmol/LJ050-0267.wav" controls></audio> |  
-| Tacotron2.v2 | WaveNet vocoder | <audio src="wav/taco2.v2.WNVmol/LJ050-0267.wav" controls></audio> |  
+| Transformer.v1 | WaveNet vocoder | <audio src="wav/transformer.v1.WNVmol/LJ050-0267_gen.wav" controls></audio> |  
+| Tacotron2.v2 | WaveNet vocoder | <audio src="wav/taco2.v2.WNVmol/LJ050-0267_gen.wav" controls></audio> |  
 
     Ground truth
     id: (lj050_0267)
@@ -319,8 +319,8 @@
 | Model | Waveform synthesis | Speech |  
 | --- | --- | --- |  
 | Ground truth |  | <audio src="wav/ground-truth/LJ050-0272.wav" controls></audio> |  
-| Transformer.v1 | WaveNet vocoder | <audio src="wav/transformer.v1.WNVmol/LJ050-0272.wav" controls></audio> |  
-| Tacotron2.v2 | WaveNet vocoder | <audio src="wav/taco2.v2.WNVmol/LJ050-0272.wav" controls></audio> |  
+| Transformer.v1 | WaveNet vocoder | <audio src="wav/transformer.v1.WNVmol/LJ050-0272_gen.wav" controls></audio> |  
+| Tacotron2.v2 | WaveNet vocoder | <audio src="wav/taco2.v2.WNVmol/LJ050-0272_gen.wav" controls></audio> |  
 
     Ground truth
     id: (lj050_0272)
