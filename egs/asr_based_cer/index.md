@@ -20,7 +20,7 @@
 | モデル | 概要 |  
 | --- | --- |  
 | Tacotron2.v2 | Tacotron2 (RNN) [2]，Forward attention, transition agent [3] |  
-| Tacotron2.v3 | Tacotron2 (RNN)，Location attention [4], Guided attention loss [5] |  
+| Tacotron2.v3 | Tacotron2 (RNN)，Location sensitive attention [4], Guided attention loss [5] |  
 | Transformer.v1 | Transformer (self-attention) [6]，Guided attention loss |  
 | FastSpeech.v2 | FastSpeech (self-attention) [7]，教師モデル：Trasformer.v1 |  
 
@@ -227,7 +227,130 @@
     HYP:  t o e s t a b l i s h l i a i s o n w i t h l o c a l i n t e l l i g e n c e g a t h e r i n g a g e n c i e s a n d t o p r o v i d e f o r t h e i m m e d i a t e e v a l u a t i o n o f i n f o r m a t i o n r e c e i v e d f r o m t h e m 
     Eval:                                                                                                                                                                                                                                                     
 
+## 単語の未発話のサンプル2 (Griffin-Lim)
+
+| Model | Waveform synthesis | Speech |  
+| --- | --- | --- |  
+| Ground truth |  | <audio src="wav/ground-truth/LJ050-0267.wav" controls></audio> |  
+| Transformer.v1 | Griffin-Lim algorithm | <audio src="wav/transformer.v1.GL/LJ050-0267.wav" controls></audio> |  
+| Tacotron2.v2 | Griffin-Lim algorithm | <audio src="wav/taco2.v2.GL/LJ050-0267.wav" controls></audio> |  
+
+    Ground truth
+    id: (lj050_0267)
+    Scores: (#C #S #D #I) 124 1 0 0
+    REF:  b e t w e e n s e c r e t a r y d i l l o n a n d d o n a l d f h o r n I g s p e c i a l a s s i s t a n t t o t h e p r e s i d e n t f o r s c i e n c e a n d t e c h n o l o g y i s a u s e f u l e f f o r t i n t h e r i g h t d i r e c t i o n 
+    HYP:  b e t w e e n s e c r e t a r y d i l l o n a n d d o n a l d f h o r n A g s p e c i a l a s s i s t a n t t o t h e p r e s i d e n t f o r s c i e n c e a n d t e c h n o l o g y i s a u s e f u l e f f o r t i n t h e r i g h t d i r e c t i o n 
+    Eval:                                                                         S                                                                                                                                                                                 
+      
+    Transformer.v1 with Griffin-Lim algorithm
+    id: (lj050_0267)
+    Scores: (#C #S #D #I) 110 4 11 8
+    REF:  b e t w e e n s e c r e t a r y d i l l o n a n d d o n a l * * * * d * * * F H o R n i * g s p e c i a l a s s i s t a n t t o t h e p r e s i d e n t F O R s C I E N C E A N D t e c h n o l o g y i s a u s e f u l e f f o r t i n t h e r i g h t d i r e c t i o n 
+    HYP:  b e t w e e n s e c r e t a r y d i l l o n a n d d o n a l D A N D d O N A L D o W n i N g s p e c i a l a s s i s t a n t t o t h e p r e s i d e n t * * ' s * * * * * * * * * t e c h n o l o g y i s a u s e f u l e f f o r t i n t h e r i g h t d i r e c t i o n 
+    Eval:                                                             I I I I   I I I S S   S     I                                                               D D S   D D D D D D D D D                                                                                         
+      
+    Transformer.v1 with Griffin-Lim algorithm
+    id: (lj050_0267)
+    Scores: (#C #S #D #I) 124 0 1 0
+    REF:  b e t w e e n s e c r e t a r y d i l l o n a n d d o n a l d f H o r n i g s p e c i a l a s s i s t a n t t o t h e p r e s i d e n t f o r s c i e n c e a n d t e c h n o l o g y i s a u s e f u l e f f o r t i n t h e r i g h t d i r e c t i o n 
+    HYP:  b e t w e e n s e c r e t a r y d i l l o n a n d d o n a l d f * o r n i g s p e c i a l a s s i s t a n t t o t h e p r e s i d e n t f o r s c i e n c e a n d t e c h n o l o g y i s a u s e f u l e f f o r t i n t h e r i g h t d i r e c t i o n 
+    Eval:                                                                 D                                                                                                                                                                                         
+
+## 単語の未発話のサンプル2 (WaveNet)
+
+| Model | Waveform synthesis | Speech |  
+| --- | --- | --- |  
+| Ground truth |  | <audio src="wav/ground-truth/LJ050-0267.wav" controls></audio> |  
+| Transformer.v1 | WaveNet vocoder | <audio src="wav/transformer.v1.WNVmol/LJ050-0267.wav" controls></audio> |  
+| Tacotron2.v2 | WaveNet vocoder | <audio src="wav/taco2.v2.WNVmol/LJ050-0267.wav" controls></audio> |  
+
+    Ground truth
+    id: (lj050_0267)
+    Scores: (#C #S #D #I) 124 1 0 0
+    REF:  b e t w e e n s e c r e t a r y d i l l o n a n d d o n a l d f h o r n I g s p e c i a l a s s i s t a n t t o t h e p r e s i d e n t f o r s c i e n c e a n d t e c h n o l o g y i s a u s e f u l e f f o r t i n t h e r i g h t d i r e c t i o n 
+    HYP:  b e t w e e n s e c r e t a r y d i l l o n a n d d o n a l d f h o r n A g s p e c i a l a s s i s t a n t t o t h e p r e s i d e n t f o r s c i e n c e a n d t e c h n o l o g y i s a u s e f u l e f f o r t i n t h e r i g h t d i r e c t i o n 
+    Eval:                                                                         S                                                                                                                                                                                 
+      
+    Transformer.v1 with WaveNet vocoder
+    id: (lj050_0267)
+    Scores: (#C #S #D #I) 109 3 13 8
+    REF:  b e t w e e n s e c r e t a r y d i l l o n a n d d o n a l * * * * d * * * F H o R n i * g s p e c i a l a s s i s t a n t t o t h e p r e s i d e n t F O R S C I E N C E A N D t e c h n o l o g y i s a u s e f u l e f f o r t i n t h e r i g h t d i r e c t i o n 
+    HYP:  b e t w e e n s e c r e t a r y d i l l o n a n d d o n a l D A N D d O N A L D o W n i N g s p e c i a l a s s i s t a n t t o t h e p r e s i d e n t * * * * * * * * * * * * * t e c h n o l o g y i s a u s e f u l e f f o r t i n t h e r i g h t d i r e c t i o n 
+    Eval:                                                             I I I I   I I I S S   S     I                                                               D D D D D D D D D D D D D                                                                                         
+      
+    Tacotron2.v2 with WaveNet vocoder
+    id: (lj050_0267)
+    Scores: (#C #S #D #I) 124 0 1 0
+    REF:  b e t w e e n s e c r e t a r y d i l l o n a n d d o n a l d f H o r n i g s p e c i a l a s s i s t a n t t o t h e p r e s i d e n t f o r s c i e n c e a n d t e c h n o l o g y i s a u s e f u l e f f o r t i n t h e r i g h t d i r e c t i o n 
+    HYP:  b e t w e e n s e c r e t a r y d i l l o n a n d d o n a l d f * o r n i g s p e c i a l a s s i s t a n t t o t h e p r e s i d e n t f o r s c i e n c e a n d t e c h n o l o g y i s a u s e f u l e f f o r t i n t h e r i g h t d i r e c t i o n 
+    Eval:                                                                 D                                                                                                                                                                                         
+
+## 単語の未発話のサンプル2 (Griffin-Lim)
+
+| Model | Waveform synthesis | Speech |  
+| --- | --- | --- |  
+| Ground truth |  | <audio src="wav/ground-truth/LJ050-0272.wav" controls></audio> |  
+| Transformer.v1 | Griffin-Lim algorithm | <audio src="wav/transformer.v1.GL/LJ050-0272.wav" controls></audio> |  
+| Tacotron2.v2 | Griffin-Lim algorithm | <audio src="wav/taco2.v2.GL/LJ050-0272.wav" controls></audio> |  
+
+    Ground truth
+    id: (lj050_0272)
+    Scores: (#C #S #D #I) 92 0 0 0
+    REF:  a n d t h e t r a d i t i o n s o f t h e o f f i c e i n a d e m o c r a c y s u c h a s o u r s a r e s o d e e p s e a t e d a s t o p r e c l u d e a b s o l u t e s e c u r i t y 
+    HYP:  a n d t h e t r a d i t i o n s o f t h e o f f i c e i n a d e m o c r a c y s u c h a s o u r s a r e s o d e e p s e a t e d a s t o p r e c l u d e a b s o l u t e s e c u r i t y 
+    Eval:                                                                                                                                                                                         
+      
+    Transformer.v1 with Griffin-Lim algorithm
+    id: (lj050_0272)
+    Scores: (#C #S #D #I) 86 0 6 0
+    REF:  a n d t h e t r a d i t i o n s o f t h e o f f i c e i n a d e m o c r a c y s u c h a s o u r s a r E S O D E e P s e a t e d a s t o p r e c l u d e a b s o l u t e s e c u r i t y 
+    HYP:  a n d t h e t r a d i t i o n s o f t h e o f f i c e i n a d e m o c r a c y s u c h a s o u r s a r * * * * * e * s e a t e d a s t o p r e c l u d e a b s o l u t e s e c u r i t y 
+    Eval:                                                                                                       D D D D D   D                                                                     
+      
+    Transformer.v1 with Griffin-Lim algorithm
+    id: (lj050_0272)
+    Scores: (#C #S #D #I) 92 0 0 0
+    REF:  a n d t h e t r a d i t i o n s o f t h e o f f i c e i n a d e m o c r a c y s u c h a s o u r s a r e s o d e e p s e a t e d a s t o p r e c l u d e a b s o l u t e s e c u r i t y 
+    HYP:  a n d t h e t r a d i t i o n s o f t h e o f f i c e i n a d e m o c r a c y s u c h a s o u r s a r e s o d e e p s e a t e d a s t o p r e c l u d e a b s o l u t e s e c u r i t y 
+    Eval:                                                                                                                                                                                         
+
+## 単語の未発話のサンプル3 (WaveNet)
+
+| Model | Waveform synthesis | Speech |  
+| --- | --- | --- |  
+| Ground truth |  | <audio src="wav/ground-truth/LJ050-0272.wav" controls></audio> |  
+| Transformer.v1 | WaveNet vocoder | <audio src="wav/transformer.v1.WNVmol/LJ050-0272.wav" controls></audio> |  
+| Tacotron2.v2 | WaveNet vocoder | <audio src="wav/taco2.v2.WNVmol/LJ050-0272.wav" controls></audio> |  
+
+    Ground truth
+    id: (lj050_0272)
+    Scores: (#C #S #D #I) 92 0 0 0
+    REF:  a n d t h e t r a d i t i o n s o f t h e o f f i c e i n a d e m o c r a c y s u c h a s o u r s a r e s o d e e p s e a t e d a s t o p r e c l u d e a b s o l u t e s e c u r i t y 
+    HYP:  a n d t h e t r a d i t i o n s o f t h e o f f i c e i n a d e m o c r a c y s u c h a s o u r s a r e s o d e e p s e a t e d a s t o p r e c l u d e a b s o l u t e s e c u r i t y 
+    Eval:                                                                                                                                                                                         
+      
+    Transformer.v1 with WaveNet vocoder
+    id: (lj050_0272)
+    Scores: (#C #S #D #I) 86 0 6 0
+    REF:  a n d t h e t r a d i t i o n s o f t h e o f f i c e i n a d e m o c r a c y s u c h a s o u r s a r E S O D E e P s e a t e d a s t o p r e c l u d e a b s o l u t e s e c u r i t y 
+    HYP:  a n d t h e t r a d i t i o n s o f t h e o f f i c e i n a d e m o c r a c y s u c h a s o u r s a r * * * * * e * s e a t e d a s t o p r e c l u d e a b s o l u t e s e c u r i t y 
+    Eval:                                                                                                       D D D D D   D                                                                     
+      
+        Tacotron2.v2 with WaveNet vocoder
+    id: (lj050_0272)
+    Scores: (#C #S #D #I) 92 0 0 0
+    REF:  a n d t h e t r a d i t i o n s o f t h e o f f i c e i n a d e m o c r a c y s u c h a s o u r s a r e s o d e e p s e a t e d a s t o p r e c l u d e a b s o l u t e s e c u r i t y 
+    HYP:  a n d t h e t r a d i t i o n s o f t h e o f f i c e i n a d e m o c r a c y s u c h a s o u r s a r e s o d e e p s e a t e d a s t o p r e c l u d e a b s o l u t e s e c u r i t y 
+    Eval:                                                                                                                                                                                         
+
+
 ## 参考文献
 
-- [1] A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, Ł. Kaiser, and I. Polosukhin, “Attention is allyou need,”  in Advances in neural information processing sys-tems, 2017, pp. 5998–6008.
-- [2] D. Snyder, D. Garcia-Romero, G. Sell, D. Povey, and S. Khu-danpur, “X-vectors: Robust DNN embeddings for speaker recognition,” in Proc. of ICASSP, 2018, pp. 5329–5333.
+- [1] K. Ito, “The LJ speech dataset,” https://keithito.com/LJ-Speech-Dataset/, 2017.
+- [2] J. Shen, R. Pang, R. J. Weiss, M. Schuster, N. Jaitly, Z. Yang, Z. Chen, Y. Zhang, Y. Wang, R. Skerrv-Ryan, et al., “Natural TTS synthesis by conditioning WaveNet on Mel spectrogram predictions,” in Proc. of ICASSP, 2018, pp. 4779–4783.
+- [3] J.-X. Zhang, Z.-H. Ling, and L.-R. Dai, “Forward attention in sequence-to-sequence acoustic modeling for speech synthesis,” in ICASSP, 2018, pp. 4789–4793.
+- [4] J. K. Chorowski, D. Bahdanau, D. Serdyuk, et al., “Attention-based models for speech recognition,” in NIPS, 2015, pp. 577–585.
+- [5] H. Tachibana, K. Uenoyama, and S. Aihara, “Efficiently trainable text-to-speech system based on deep convolutional networks with guided attention,” in ICASSP, 2018, pp. 4784–4788.
+- [6] N. Li, S. Liu, Y. Liu, S. Zhao, M. Liu, and M. Zhou, “Close to human quality TTS with Transformer,” arXiv preprint arXiv:1809.08895, 2018.
+- [7] Y. Ren, Y. Ruan, X. Tan, T. Qin, S. Zhao, Z. Zhao, and T. Liu, “FastSpeech: fast, robust and controllable text to speech,” arXiv preprint arXiv:1905.09263, 2019.
+- [8] V. Panayotov, G. Chen, D. Povey, and S. Khudanpur, “Librispeech: an ASR corpus based on public domain audio books,” in Proc. of ICASSP, 2015, pp. 5206–5210.
