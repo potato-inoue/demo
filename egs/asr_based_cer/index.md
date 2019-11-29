@@ -173,6 +173,65 @@
 
 | Model | Waveform synthesis | Speech |  
 | --- | --- | --- |  
+| Ground truth |  | <audio src="wav/ground-truth/LJ050-0070.wav" controls></audio> |  
+| Transformer.v1 | Griffin-Lim algorithm | <audio src="wav/transformer.v1.GL/LJ050-0070.wav" controls></audio> |  
+| Tacotron2.v2 | Griffin-Lim algorithm | <audio src="wav/taco2.v2.GL/LJ050-0070.wav" controls></audio> |  
+
+    Ground truth
+    id: (lj050_0070)
+    Scores: (#C #S #D #I) 85 2 1 1
+    REF:  t h e f b i n o w t r a n s m i t S i n f o r m a t i o n o n a l l * D e f E c t o r s a c a t e g o r y w h i c h w o u l d o f c o u r s e h a v e i n c l u d e d o s w a l d 
+    HYP:  t h e f b i n o w t r a n s m i t * i n f o r m a t i o n o n a l l T H e f A c t o r s a c a t e g o r y w h i c h w o u l d o f c o u r s e h a v e i n c l u d e d o s w a l d 
+    Eval:                                   D                                 I S     S                                                                                                     
+      
+    Transformer.v1 with Griffin-Lim algorithm
+    id: (lj050_0070)
+    Scores: (#C #S #D #I) 74 2 12 1
+    REF:  T H E f b i n o w t r a n s m i t S i n f o r m a t i o n o n a l l * D e f E c t o r s a c a t e g o r y w h i c h w O U L D O F C o U r s e h a v e i n c l u d e d o s w a l d 
+    HYP:  * * * f b i n o w t r a n s m i t * i n f o r m a t i o n o n a l l T H e f A c t o r s a c a t e g o r y w h i c h w * * * * * * * o * r s e h a v e i n c l u d e d o s w a l d 
+    Eval: D D D                             D                                 I S     S                                         D D D D D D D   D                                           
+    　　
+    Transformer.v1 with Griffin-Lim algorithm
+    id: (lj050_0070)
+    Scores: (#C #S #D #I) 85 0 3 0
+    REF:  T H E f b i n o w t r a n s m i t s i n f o r m a t i o n o n a l l d e f e c t o r s a c a t e g o r y w h i c h w o u l d o f c o u r s e h a v e i n c l u d e d o s w a l d 
+    HYP:  * * * f b i n o w t r a n s m i t s i n f o r m a t i o n o n a l l d e f e c t o r s a c a t e g o r y w h i c h w o u l d o f c o u r s e h a v e i n c l u d e d o s w a l d 
+    Eval: D D D                                                                                                                                                                           
+
+## 単語の未発話のサンプル1 (WaveNet)
+
+| Model | Waveform synthesis | Speech |  
+| --- | --- | --- |  
+| Ground truth |  | <audio src="wav/ground-truth/LJ050-0070.wav" controls></audio> |  
+| Transformer.v1 | WaveNet vocoder | <audio src="wav/transformer.v1.WNVmol/LJ050-0070_gen.wav" controls></audio> |  
+| Tacotron2.v2 | WaveNet vocoder | <audio src="wav/taco2.v2.WNVmol/LJ050-0070_gen.wav" controls></audio> |  
+
+    Ground truth
+    id: (lj050_0070)
+    Scores: (#C #S #D #I) 85 2 1 1
+    REF:  t h e f b i n o w t r a n s m i t S i n f o r m a t i o n o n a l l * D e f E c t o r s a c a t e g o r y w h i c h w o u l d o f c o u r s e h a v e i n c l u d e d o s w a l d 
+    HYP:  t h e f b i n o w t r a n s m i t * i n f o r m a t i o n o n a l l T H e f A c t o r s a c a t e g o r y w h i c h w o u l d o f c o u r s e h a v e i n c l u d e d o s w a l d 
+    Eval:                                   D                                 I S     S                                                                                                     
+      
+    Transformer.v1 with WaveNet vocoder
+    id: (lj050_0070)
+    Scores: (#C #S #D #I) 77 0 11 0
+    REF:  T H E f b i n o w t r a n s m i t s i n f o r m a t i o n o n a l l d e f e c t o r s a c a t e g o r y w h i c h w O U L D O F C o U r s e h a v e i n c l u d e d o s w a l d 
+    HYP:  * * * f b i n o w t r a n s m i t s i n f o r m a t i o n o n a l l d e f e c t o r s a c a t e g o r y w h i c h w * * * * * * * o * r s e h a v e i n c l u d e d o s w a l d 
+    Eval: D D D                                                                                                               D D D D D D D   D                                           
+    　　
+    Tacotron2.v2 with WaveNet vocoder
+    id: (lj050_0070)
+    Scores: (#C #S #D #I) 88 0 0 0
+    REF:  t h e f b i n o w t r a n s m i t s i n f o r m a t i o n o n a l l d e f e c t o r s a c a t e g o r y w h i c h w o u l d o f c o u r s e h a v e i n c l u d e d o s w a l d 
+    HYP:  t h e f b i n o w t r a n s m i t s i n f o r m a t i o n o n a l l d e f e c t o r s a c a t e g o r y w h i c h w o u l d o f c o u r s e h a v e i n c l u d e d o s w a l d 
+    Eval:                                                                                                                                                                                 
+
+
+## 単語の未発話のサンプル2 (Griffin-Lim)
+
+| Model | Waveform synthesis | Speech |  
+| --- | --- | --- |  
 | Ground truth |  | <audio src="wav/ground-truth/LJ050-0176.wav" controls></audio> |  
 | Transformer.v1 | Griffin-Lim algorithm | <audio src="wav/transformer.v1.GL/LJ050-0176.wav" controls></audio> |  
 | Tacotron2.v2 | Griffin-Lim algorithm | <audio src="wav/taco2.v2.GL/LJ050-0176.wav" controls></audio> |  
@@ -198,7 +257,7 @@
     HYP:  t o e s t a b l i s h l i a i s o n w i t h l o c a l i n t e l l i g e n c e g a t h e r i n g a g e n c i e s a n d t o p r o v i d e f o r t h e i m m e d i a t e e v a l u a t i o n o f i n f o r m a t i o n r e c e i v e d f r o m t h e m 
     Eval:                                                                                                                                                                                                                                                     
 
-## 単語の未発話のサンプル1 (WaveNet)
+## 単語の未発話のサンプル2 (WaveNet)
 
 | Model | Waveform synthesis | Speech |  
 | --- | --- | --- |  
@@ -227,7 +286,7 @@
     HYP:  t o e s t a b l i s h l i a i s o n w i t h l o c a l i n t e l l i g e n c e g a t h e r i n g a g e n c i e s a n d t o p r o v i d e f o r t h e i m m e d i a t e e v a l u a t i o n o f i n f o r m a t i o n r e c e i v e d f r o m t h e m 
     Eval:                                                                                                                                                                                                                                                     
 
-## 単語の未発話のサンプル2 (Griffin-Lim)
+## 単語の未発話のサンプル3 (Griffin-Lim)
 
 | Model | Waveform synthesis | Speech |  
 | --- | --- | --- |  
@@ -256,7 +315,7 @@
     HYP:  b e t w e e n s e c r e t a r y d i l l o n a n d d o n a l d f * o r n i g s p e c i a l a s s i s t a n t t o t h e p r e s i d e n t f o r s c i e n c e a n d t e c h n o l o g y i s a u s e f u l e f f o r t i n t h e r i g h t d i r e c t i o n 
     Eval:                                                                 D                                                                                                                                                                                         
 
-## 単語の未発話のサンプル2 (WaveNet)
+## 単語の未発話のサンプル3 (WaveNet)
 
 | Model | Waveform synthesis | Speech |  
 | --- | --- | --- |  
@@ -285,7 +344,7 @@
     HYP:  b e t w e e n s e c r e t a r y d i l l o n a n d d o n a l d f * o r n i g s p e c i a l a s s i s t a n t t o t h e p r e s i d e n t f o r s c i e n c e a n d t e c h n o l o g y i s a u s e f u l e f f o r t i n t h e r i g h t d i r e c t i o n 
     Eval:                                                                 D                                                                                                                                                                                         
 
-## 単語の未発話のサンプル3 (Griffin-Lim)
+## 単語の未発話のサンプル4 (Griffin-Lim)
 
 | Model | Waveform synthesis | Speech |  
 | --- | --- | --- |  
@@ -314,7 +373,7 @@
     HYP:  a n d t h e t r a d i t i o n s o f t h e o f f i c e i n a d e m o c r a c y s u c h a s o u r s a r e s o d e e p s e a t e d a s t o p r e c l u d e a b s o l u t e s e c u r i t y 
     Eval:                                                                                                                                                                                         
 
-## 単語の未発話のサンプル3 (WaveNet)
+## 単語の未発話のサンプル4 (WaveNet)
 
 | Model | Waveform synthesis | Speech |  
 | --- | --- | --- |  
